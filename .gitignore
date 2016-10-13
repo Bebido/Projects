@@ -55,6 +55,7 @@
 Network Trash Folder
 Temporary Items
 .apdisk
+Debug
 
 # Windows
 # =========================
@@ -77,3 +78,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.manifest
+*.txt
+*.cache
+*.log
+*.tlog
+*.idb
+*.db
