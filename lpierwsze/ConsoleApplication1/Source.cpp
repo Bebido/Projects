@@ -23,6 +23,8 @@ int main()
 
 int silnia(int n)
 {
+	if (n > 9)
+		return 0;
 	int wynik = 1;
 	for (int i = 1; i <= n; ++i)
 		wynik = wynik * i;
