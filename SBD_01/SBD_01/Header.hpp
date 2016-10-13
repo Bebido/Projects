@@ -8,4 +8,4 @@ void wybor();
 
 //ttttt
 //asdadgar
-//asdasdasqe
+//asdasdasqesadasd
