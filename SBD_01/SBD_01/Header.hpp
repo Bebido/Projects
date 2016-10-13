@@ -7,3 +7,5 @@ void wybor();
 #endif // !header_cpp
 
 //ttttt
+//asdadgar
+//asdasdasqe
