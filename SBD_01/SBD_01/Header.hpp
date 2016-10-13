@@ -1,6 +1,6 @@
 #ifndef header_cpp
 #define header_cpp
-#include <iostream>
+#include <iostream>         // w headerach includowac jak najmniej mozliwe do zrobienia deklaracji, reszta juz w cpp gdzie jest uzycie
 
 void wybor();
 
