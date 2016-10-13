@@ -16,10 +16,10 @@ int main()
 
 		for (int i = 1; i <= wejscie; ++i)
 		{
-			if ( wejscie%i == 0 && i != wejscie && i != 1 && i != wejscie)
+			if ( wejscie%i == 0 && i != wejscie && i != 1 && i != wejscie)      // 2x i != wejscie
 			{
 				std::cout << "NIE\n";
-				i =+ wejscie;
+				i =+ wejscie;       // cos tu nie gra, to jest rownowazne i = wejscie, a nie i = i + wejscie, na pewno zamierzone?
 				continue;
 			}
 			if (i == wejscie)
@@ -28,5 +28,5 @@ int main()
 		--testy;
 	}
 	return 0;
-
+    //  ogolnie ten jest stylowo lepszy od poprzedniego, wypracuj 1 styl i staraj sie nie zmieniac
 }
