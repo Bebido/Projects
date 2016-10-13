@@ -12,7 +12,7 @@ public:
 	int rozmiar;
 	int *wpisy;
 
-	Rekord(int ind, int n, int tab[])
+	Rekord(int ind, int n, int tab[])       // raczej wyrzucaj juz do osobnego pliku, lepiej miec .h z samymi deklaracjami i cpp z implementacja
 	{
 		this->index = ind;
 		this->rozmiar = n;
@@ -21,7 +21,7 @@ public:
 		for (int i = 0; i < this->rozmiar; ++i)
 		{
 			wpisy[i] = tab[i];
-			if (wpisy[i] > this->max)
+			if (wpisy[i] > this->max)       // takie ify to zlo, zawsze uzywaj klamer
 				this->max = wpisy[i];
 		}
 	}
@@ -29,7 +29,7 @@ public:
 	void wypisz()
 	{
 		cout << "Index: " << this->index << ". ";
-		for (int i = 0; i < this->rozmiar; ++i)
+		for (int i = 0; i < this->rozmiar; ++i)     // klamry
 			cout << wpisy[i] << " ";
 		cout << endl;
 	}
