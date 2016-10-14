@@ -17,24 +17,19 @@ int main()
 	return 0;
 }
 
-int potega_ostatnia_cyfra(int podstawa, int wykladnik)
+int potega_ostatnia_cyfra(int podstawa, int wykladnik) 
 {
 	int wynik = 1;
-	int wykladnik_modulo = wykladnik % 5;
-	bool petla = false;
+	podstawa = podstawa % 10; // wazna tylko ostatnia cyfra
+	int wykladnik_modulo = (wykladnik % 4) + 4;
 	for (int i = 0; i < wykladnik_modulo; ++i)
 	{
-		petla = true;
 		wynik = wynik * podstawa;
 		if (wynik > 1000)
 		{
 			wynik = wynik % 1000;
 		}
 
-	}
-	if (petla == false)
-	{
-		wynik = podstawa;
 	}
 	wynik = wynik % 10;
 	return wynik;
