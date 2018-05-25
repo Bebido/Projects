@@ -1,10 +1,9 @@
 #include "Header.hpp"
 
-using std::cin;
-using std::cout;
-
 int main()
 {
+	srand(time(NULL));
 	wybor();
+	sortuj();
 	system("pause");
 }

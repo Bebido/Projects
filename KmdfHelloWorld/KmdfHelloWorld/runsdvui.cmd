@@ -1,0 +1,2 @@
+cd /d "c:\Users\Mariusz\documents\visual studio 2015\Projects\KmdfHelloWorld\KmdfHelloWorld" &msbuild "KmdfHelloWorld.vcxproj" /t:sdvViewer /p:configuration="Debug" /p:platform=Win32
+exit %errorlevel% 

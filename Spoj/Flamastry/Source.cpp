@@ -1,6 +1,8 @@
 #include <iostream> //do zrobienia prog
 #include <stdio.h>
 
+void licz_znaki(char *tab, int rozmiar);
+
 int main()
 {
 	int testy;
@@ -21,12 +23,19 @@ int main()
 				break;
 			}
 		}
+		licz_znaki(napis, rozmiar);
+		/*for (int i = 0; i < rozmiar; ++i)
+		{
+			std::cout << napis[i];
+		}
+		*/
+		std::cout << std::endl;
 		--testy;
 	}
 
-	for (int i = 0; i < rozmiar; ++i)
-	{
-		std::cout << napis[i];
-	}
+}
+
+void licz_znaki(char *tab, int rozmiar)
+{
 
 }

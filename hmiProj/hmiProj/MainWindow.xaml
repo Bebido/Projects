@@ -1,0 +1,209 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hmiProj"
+        xmlns:CircularGauge="clr-namespace:CircularGauge;assembly=CircularGauge"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:FlowGraph="clr-namespace:Microsoft.Expression.Prototyping.FlowGraph;assembly=Microsoft.Expression.Prototyping.Runtime" x:Class="hmiProj.MainWindow"
+        mc:Ignorable="d"
+        Title="Desktop" Height="455.225" Width="943">
+    <Grid>
+        <CircularGauge:CircularGaugeControl x:Name="myGauge1" 
+
+  Radius="80"                                                             
+  ScaleRadius="60" 
+
+  ScaleStartAngle="120" 
+  ScaleSweepAngle="300"
+
+  PointerLength="45" 
+
+  PointerCapRadius="20" 
+
+  MinValue="0" 
+  MaxValue="80" 
+
+  MajorDivisionsCount="8" 
+  MinorDivisionsCount="5"
+                                            
+  CurrentValue = "0"
+
+  ImageSize="30,25"
+
+  RangeIndicatorThickness="15"
+
+  RangeIndicatorRadius="65"
+
+  RangeIndicatorLightRadius="4"
+
+  RangeIndicatorLightOffset="55"
+
+  ScaleLabelRadius="50"
+
+  ScaleLabelSize="50,20"
+
+  ScaleLabelFontSize="10"
+
+  ScaleLabelForeground="White"
+
+  MajorTickSize="10,3"                                         
+  MinorTickSize="3,1"
+
+  MajorTickColor="LightGray"
+
+  MinorTickColor="LightGray"
+
+  ImageOffset="-50"
+
+  GaugeBackgroundColor="Black"
+
+  PointerThickness ="16"
+
+  OptimalRangeStartValue="32"
+  OptimalRangeEndValue="55" 
+  OptimalRangeColor="Yellow"    AboveOptimalRangeColor="Red"    BelowOptimalRangeColor="Green"
+
+  DialTextOffset="30" 
+  DialText="rpm x100"
+  DialTextColor="White" Margin="163,50,564,166.225"/>
+        <CircularGauge:CircularGaugeControl x:Name="Speed" 
+
+  Radius="80"                                                             
+  ScaleRadius="60" 
+
+  ScaleStartAngle="120" 
+  ScaleSweepAngle="300"
+
+  PointerLength="45" 
+
+  PointerCapRadius="20" 
+
+  MinValue="0" 
+  MaxValue="240" 
+
+  MajorDivisionsCount="8" 
+  MinorDivisionsCount="5"
+                                            
+  CurrentValue = "0"
+
+  RangeIndicatorThickness="10"
+
+  RangeIndicatorRadius="0"
+
+  RangeIndicatorLightRadius="0"
+
+  RangeIndicatorLightOffset="0"
+
+  ScaleLabelRadius="70"
+
+  ScaleLabelSize="60,20"
+
+  ScaleLabelFontSize="12"
+
+  ScaleLabelForeground="Black"
+
+  MajorTickSize="10,3"                                         
+  MinorTickSize="3,1"
+
+  MajorTickColor="LightGray"
+
+  MinorTickColor="LightGray"
+
+  ImageOffset="-40"
+
+  GaugeBackgroundColor="Blue"
+
+  PointerThickness ="15"
+
+  OptimalRangeStartValue="32"
+  OptimalRangeEndValue="70" 
+  OptimalRangeColor="Green"
+   
+  
+
+  DialTextOffset="45" 
+  DialText="km/h"
+  DialTextColor="White" Margin="391,64,315,175.225"/>
+        <CircularGauge:CircularGaugeControl x:Name="fuelGauge" 
+
+  Radius="50"                                                             
+  ScaleRadius="40" 
+
+  ScaleStartAngle="200" 
+  ScaleSweepAngle="140"
+
+  PointerLength="30" 
+
+  PointerCapRadius="15" 
+
+  MinValue="0" 
+  MaxValue="100" 
+
+  MajorDivisionsCount="4" 
+  MinorDivisionsCount="1"
+                                            
+  CurrentValue = "60"
+
+  RangeIndicatorThickness="16"
+
+  RangeIndicatorRadius="34"
+
+  RangeIndicatorLightRadius="4"
+
+  RangeIndicatorLightOffset="25"
+
+  ScaleLabelRadius="0"
+
+  ScaleLabelSize="0,0"
+
+  ScaleLabelFontSize="10"
+
+  ScaleLabelForeground="White"
+
+  MajorTickSize="10,3"                                         
+  MinorTickSize="3,1"
+
+  MajorTickColor="LightGray"
+
+  MinorTickColor="LightGray"
+
+  ImageOffset="-18"   
+  
+  ImageSize="25,20"
+  GaugeBackgroundColor="DarkGoldenrod"
+
+  PointerThickness ="10"
+
+  OptimalRangeStartValue="15"
+  OptimalRangeEndValue="40" 
+  OptimalRangeColor="Yellow"    AboveOptimalRangeColor="Green"    BelowOptimalRangeColor="Red"
+
+  DialTextOffset="30" 
+  DialText=""
+  DialTextColor="White" Margin="10,104,762,175.225"/>
+        <Label x:Name="label" Content="--:--:--" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,0,0,0" Width="70"/>
+        <Label x:Name="fuelConsume" Content=" -.-- l/100km" HorizontalAlignment="Left" Margin="466,240,0,0" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="engineTemp" Content="Temp. : --°C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,61,0,0" Width="101"/>
+        <Image x:Name="image"  HorizontalAlignment="Left" Height="28" Margin="78,186,0,0" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.184,1" Source="Resources/fuel.png"/>
+        <Image x:Name="imageAbs" Opacity="0.2" Source="Resources/abs_off.png" HorizontalAlignment="Left" Height="38" Margin="416,254,0,0" VerticalAlignment="Top" Width="46"/>
+        <Label x:Name="przebiegWindow" Content="10000km" HorizontalAlignment="Left" Margin="478,115,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.232,0.616"/>
+        <Image x:Name="oilImage" Opacity="0.2" HorizontalAlignment="Left" Height="26" Margin="363,266,0,0" VerticalAlignment="Top" Width="38" Source="Resources/Oil.png"/>
+        <Image x:Name="batteryImage" Opacity="0.2"  HorizontalAlignment="Left" Height="31" Margin="323,258,0,0" VerticalAlignment="Top" Width="35" Source="Resources/battery.png" RenderTransformOrigin="0.8,0.432"/>
+        <Image x:Name="espImage" Opacity="0.2" HorizontalAlignment="Left" Height="51" Margin="266,248,0,0" VerticalAlignment="Top" Width="57" Source="Resources/esp.png"/>
+        <GroupBox x:Name="groupBox" Header="Sterowanie" HorizontalAlignment="Left" Margin="21,304,0,0" VerticalAlignment="Top" Height="65" Width="575">
+            <Grid HorizontalAlignment="Left" Height="39" Margin="0,0,-2,0" VerticalAlignment="Top" Width="565">
+                <Slider x:Name="slider" Minimum="0" Maximum="240" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" ValueChanged="slider_ValueChanged" RenderTransformOrigin="0.498,-3.167"/>
+                <CheckBox x:Name="espControl" Content="ESP" HorizontalAlignment="Left" Margin="230,0,0,24" Checked="espControl_Checked" Height="15" VerticalAlignment="Bottom" Unchecked="espControl_Unchecked"/>
+                <CheckBox x:Name="accumulatorControl" Content="Battery" HorizontalAlignment="Left" Margin="230,20,0,0" VerticalAlignment="Top" Checked="accumulatorControl_Checked" Unchecked="accumulatorControl_Unchecked"/>
+                <CheckBox x:Name="oilControl" Content="Oil" HorizontalAlignment="Left" Margin="374,0,0,24" VerticalAlignment="Bottom" Checked="oilControl_Checked" Unchecked="oilControl_Unchecked"/>
+                <CheckBox x:Name="absControl" Content="ABS" HorizontalAlignment="Left" Margin="374,20,0,0" VerticalAlignment="Top" Checked="absControl_Checked" Unchecked="absControl_Unchecked"/>
+            </Grid>
+        </GroupBox>
+        <Grid x:Name="Wykres" HorizontalAlignment="Left" Height="229" Margin="625,20,0,0" VerticalAlignment="Top" Width="262" Loaded="Wykres_Loaded">
+            <d3:ChartPlotter Name="Chart"/>
+        </Grid>
+    </Grid>
+</Window>
